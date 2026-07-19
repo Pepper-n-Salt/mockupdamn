@@ -22,7 +22,7 @@ export default function DeletedArtworks() {
         <Link
           key={artwork.id}
           href={`/artworks/deleted/${artwork.id}`}
-          className="flex justify-between items-center border rounded-xl px-6 py-4 hover:bg-gray-50 transition"
+          className="flex justify-between items-center border self-start border-black px-8 py-3 uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-black hover:text-white"
         >
           <div>
             <h3 className="font-medium">{artwork.title}</h3>

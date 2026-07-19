@@ -25,7 +25,7 @@ export default function LandingPageArtworks() {
       </section>
 
       <Link
-        href="/artworks/new"
+        href="/landingpage/artworks/new"
         className="inline-block underline underline-offset-4 hover:opacity-70 transition text-2xl font-light "
       >
         Add new Artwork →

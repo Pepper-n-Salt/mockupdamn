@@ -16,20 +16,20 @@ export default function ArtworkCard({ artwork }: ArtworkCardProps) {
   return (
     <Link
       href={`/artworks/${artwork.id}`}
-      className="group border rounded-2xl overflow-hidden"
+      className="group overflow-hidden border"
     >
       <img
         src={artwork.image}
         alt={artwork.title}
-        className="aspect-square object-cover w-full"
+        className="aspect-square w-full object-cover"
       />
 
-      <div className="p-6 space-y-2">
-        <h3 className="text-xl font-semibold">{artwork.title}</h3>
+      <div className="space-y-1 p-3">
+        <h3 className="text-sm font-semibold">{artwork.title}</h3>
 
-        <p>{artwork.artist}</p>
+        <p className="text-sm">{artwork.artist}</p>
 
-        <p className="text-sm text-gray-500">Created: {artwork.created}</p>
+        <p className="text-xs text-gray-500">Created: {artwork.created}</p>
       </div>
     </Link>
   );

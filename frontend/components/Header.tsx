@@ -54,7 +54,7 @@ export default function Header() {
             </button>
 
             <Link href="/login">
-              <button className="px-3 py-2 rounded-2xl bg-black text-white border border-black hover:bg-white hover:text-black transition-colors duration-300">
+              <button className="self-start border border-black px-8 py-3 uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-black hover:text-white">
                 Login
               </button>
             </Link>

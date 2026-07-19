@@ -93,7 +93,7 @@ export default function ArtworkCarousel() {
         <button
           onClick={handlePrevious}
           disabled={startIndex === 0}
-          className="rounded-xl border px-4 py-2 transition hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+          className=" self-start border border-black px-8 py-3 uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
         >
           ← Previous
         </button>
@@ -101,7 +101,7 @@ export default function ArtworkCarousel() {
         <button
           onClick={handleNext}
           disabled={startIndex >= artworks.length - 3}
-          className="rounded-xl border px-4 py-2 transition hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+          className=" self-start border border-black px-8 py-3 uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-black hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
         >
           Next →
         </button>
