@@ -2,11 +2,15 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 ">
-      <div className="flex gap-8 px-8 py-8 ">
-        <Link href="/imprint">Imprint</Link>
+    <footer className="border-t border-gray-200 px-8 py-8">
+      <div className="flex justify-between items-center text-sm uppercase tracking-[0.2em]">
+        <p className="text-gray-400">© D.A.M.N. {new Date().getFullYear()} </p>
 
-        <Link href="/privacy">Privacy Policies</Link>
+        <nav className="flex gap-8">
+          <Link href="/imprint">Imprint</Link>
+
+          <Link href="/privacy">Privacy</Link>
+        </nav>
       </div>
     </footer>
   );

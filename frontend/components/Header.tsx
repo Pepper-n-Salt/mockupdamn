@@ -11,25 +11,28 @@ export default function Header() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <header className="px-8 py-6">
-      <div className="mb-4">
+    <header className="border-b border-gray-200 px-8 py-6">
+      <div className="mb-14">
         {isLandingPage ? (
+          // landingpage für eingeloggte user:innen
           <Link href="/landingpage" aria-label="Go to landingpage">
-            <div
-              className="w-55 h-24 bg-cover bg-center rounded-xl mb-4"
-              style={{ backgroundImage: "url('/damn.png')" }}
-            />
+            <div className="leading-none">
+              <p className="-ml-[4px] text-6xl tracking-[0.02em]">D.A.M.N.</p>
+              <p className="mt-1 text-sm">Digital Artwork Management Network</p>
+            </div>
           </Link>
         ) : (
-          <div
-            className="w-55 h-24 bg-cover bg-center rounded-xl mb-4"
-            style={{ backgroundImage: "url('/damn.png')" }}
-          />
+          // landingpage product
+          // <div className="border-b border-gray-200 pb-6">
+          <div className="leading-none">
+            <p className="-ml-[4px] text-6xl tracking-[0.02em]">D.A.M.N.</p>
+            <p className="mt-1 text-sm">Digital Artwork Management Network</p>
+          </div>
         )}
       </div>
 
       <div className="flex justify-between items-center">
-        <nav className="flex gap-8">
+        <nav className="flex gap-10 text-sm uppercase tracking-[0.2em]">
           {isLandingPage ? (
             <>
               <Link href="/landingpage/artworks">Artworks</Link>
@@ -46,17 +49,19 @@ export default function Header() {
         </nav>
 
         {!isLandingPage && (
-          <div className="flex items-center gap-4">
+          <div className="flex items-center uppercase gap-4">
             <button
+              className="text-sm uppercase tracking-[0.2em] cursor-pointer"
               onClick={() => setLanguage(language === "de" ? "en" : "de")}
             >
               {language.toUpperCase()}
             </button>
 
-            <Link href="/login">
-              <button className="self-start border border-black px-8 py-3 uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-black hover:text-white">
-                Login
-              </button>
+            <Link
+              href="/login"
+              className="self-start border border-black px-8 py-2.5 uppercase tracking-[0.25em] transition-colors duration-300 hover:bg-black hover:text-white"
+            >
+              Login
             </Link>
           </div>
         )}
