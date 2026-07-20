@@ -1,25 +1,47 @@
 export default function Contact() {
   return (
-    <section className="space-y-8">
-      <h1 className=" text-5xl md:text-7xl sm:text-5xl lg:text-9xl font-light">
-        Contact
-      </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 tracking-widest leading-loose">
-        {/* Schrift- tracking? */}
-        <div>
-          {" "}
-          <p>
-            Whether you represent a museum, gallery, exhibition space, or
-            cultural institution, our platform is designed to help you create
-            and manage digital information screens with ease. No technical
-            expertise is required – allowing you to focus on your exhibitions
-            while presenting content in a professional and engaging way.
-          </p>
+    <section className="space-y-20">
+      <section className="space-y-12">
+        <h1 className=" text-5xl md:text-7xl sm:text-5xl lg:text-9xl font-light">
+          Let&apos;s create
           <br />
+          something meaningful together.
+        </h1>
+        {/* <h2 className="text-4xl md:text-6xl lg:text-7xl font-light leading-tight max-w-5xl">
+          Let&apos;s create
+          <br />
+          something meaningful together.
+        </h2> */}
+      </section>
+
+      {/* <section className="border-t border-neutral-200 pt-12"> */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 tracking-widest leading-loose">
+        <div className="tracking-widest leading-loose space-y-8">
+          <div>
+            <p className="text-sm uppercase tracking-[0.25em] text-neutral-500 mb-6">
+              Get in touch
+            </p>
+            {/* <p>
+              Whether you represent a museum, gallery, exhibition space, or
+              cultural institution, our platform is designed to help you create
+              and manage digital information screens with ease. No technical
+              expertise is required – allowing you to focus on your exhibitions
+              while presenting content in a professional and engaging way.
+            </p> */}
+            <p>
+              Whether you represent a museum, gallery, exhibition space or
+              cultural institution, D.A.M.N. is designed to simplify the
+              management and presentation of digital artworks. Our platform
+              helps you create engaging digital exhibitions without requiring
+              technical expertise, allowing you to focus on your collections and
+              visitors.
+            </p>
+          </div>
+          {/* <br />
           <h3 className="font-bold ">
             Would you like to become part of our community? Get in touch.
           </h3>
-          <br />
+          <br /> */}
           <p>
             To ensure a personal and secure experience, we kindly ask all
             prospective members to complete the contact form before accessing
@@ -31,11 +53,14 @@ export default function Contact() {
             our platform and using our services. We look forward to connecting
             with you and welcoming you to our community.
           </p>
+          {/* <p>
+            Interested in becoming part of our community? Send us a message and
+            tell us more about your project, ideas or questions. We will review
+            your request and get back to you as soon as possible.
+          </p> */}
         </div>
-        <form
-          action=""
-          className="flex flex-col gap-8 max-w-md w-full mx-auto p-5"
-        >
+
+        <form action="" className="flex flex-col gap-8 max-w-md w-full mx-auto">
           {/* p-20  shadow-[0_4px_20px_rgba(0,0,0,0.04)] für die Form?*/}
           <div className="flex flex-col gap-2">
             <label
@@ -57,7 +82,7 @@ export default function Contact() {
               htmlFor="email"
               className="text-sm uppercase tracking-[0.2em]"
             >
-              Email
+              E-mail
             </label>
 
             <input
@@ -90,6 +115,7 @@ export default function Contact() {
           </button>
         </form>
       </div>
+      {/* </section> */}
     </section>
   );
 }

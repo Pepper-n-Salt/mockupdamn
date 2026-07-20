@@ -33,85 +33,43 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-        {/* Screenshot Dashboard */}
-        <div className="lg:col-span-8">
-          <div className="aspect-[16/9] border border-neutral-300 bg-neutral-100 overflow-hidden">
-            {/* hier dann Screenshot als <Image> einsetzen */}
-            <div className="flex h-full items-center justify-center uppercase tracking-[0.3em] text-neutral-400 text-sm">
-              Screenshot Dashboard 16:9
+      <section className="border-t border-neutral-200 pt-12 space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="lg:col-span-8">
+            <div className="aspect-[16/9] border border-neutral-300 bg-neutral-100 overflow-hidden">
+              {/* hier dann Screenshot als <Image> einsetzen */}
+              <div className="flex h-full items-center justify-center uppercase tracking-[0.3em] text-neutral-400 text-sm">
+                Screenshot Dashboard 16:9
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Workflow */}
-        <aside className="lg:col-span-4">
-          <p className="mb-8 text-sm uppercase tracking-[0.25em] text-neutral-500">
-            Workflow
-          </p>
+          <aside className="lg:col-span-4">
+            <p className="mb-8 text-sm uppercase tracking-[0.25em] text-neutral-500">
+              Workflow
+            </p>
 
-          <div className="space-y-6">
-            {workflow.map((item, index) => (
-              <div key={item}>
-                <div className="flex items-center gap-5">
-                  <span className="w-8 text-sm text-neutral-400">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+            <div className="space-y-6">
+              {workflow.map((item, index) => (
+                <div key={item}>
+                  <div className="flex items-center gap-5">
+                    <span className="w-8 text-sm text-neutral-400">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
 
-                  <h3 className="text-2xl font-light">{item}</h3>
+                    <h3 className="text-2xl font-light">{item}</h3>
+                  </div>
+
+                  {index < workflow.length - 1 && (
+                    <div className="ml-4 mt-3 h-8 border-l border-neutral-300" />
+                  )}
                 </div>
-
-                {index < workflow.length - 1 && (
-                  <div className="ml-4 mt-3 h-8 border-l border-neutral-300" />
-                )}
-              </div>
-            ))}
-          </div>
-        </aside>
-      </div>
-
-      {/* Systemübersicht */}
-      {/* <section className="border-t border-neutral-200 pt-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-neutral-500 mb-6">
-              Platform
-            </p>
-
-            <ul className="space-y-3">
-              <li>Artwork Management</li>
-              <li>Metadata Organization</li>
-              <li>Collection Structure</li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-neutral-500 mb-6">
-              Exhibition
-            </p>
-
-            <ul className="space-y-3">
-              <li>Digital Curation</li>
-              <li>Exhibition Planning</li>
-              <li>Screen Distribution</li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-sm uppercase tracking-[0.25em] text-neutral-500 mb-6">
-              Network
-            </p>
-
-            <ul className="space-y-3">
-              <li>Artists</li>
-              <li>Institutions</li>
-              <li>Connected Displays</li>
-            </ul>
-          </div>
+              ))}
+            </div>
+          </aside>
         </div>
-      </section> */}
+      </section>
 
-      {/* System Overview */}
       <section className="border-t border-neutral-200 pt-12 space-y-12">
         <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
           System Overview
@@ -125,7 +83,7 @@ export default function Home() {
               <h3 className="text-2xl font-light">Archive</h3>
             </div>
 
-            <div className="md:col-span-6">
+            <div className="md:col-span-6 tracking-widest leading-loose">
               <p>
                 Store, organize and maintain digital artworks with structured
                 information, metadata and documentation.
@@ -140,7 +98,7 @@ export default function Home() {
               <h3 className="text-2xl font-light">Curate</h3>
             </div>
 
-            <div className="md:col-span-6">
+            <div className="md:col-span-6 tracking-widest leading-loose">
               <p>
                 Build collections, plan exhibitions and create meaningful
                 relationships between artworks and contexts.
@@ -155,7 +113,7 @@ export default function Home() {
               <h3 className="text-2xl font-light">Publish</h3>
             </div>
 
-            <div className="md:col-span-6">
+            <div className="md:col-span-6 tracking-widest leading-loose">
               <p>
                 Connect curated content to digital screens and make artworks
                 accessible across different exhibition environments.
