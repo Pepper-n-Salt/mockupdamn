@@ -48,7 +48,7 @@ export default function Header() {
           )}
         </nav>
 
-        {!isLandingPage && (
+        {/* {!isLandingPage && (
           <div className="flex items-center uppercase gap-4">
             <button
               className="text-sm uppercase tracking-[0.2em] cursor-pointer"
@@ -60,6 +60,45 @@ export default function Header() {
             <Link
               href="/login"
               className="self-start border border-black px-8 py-2.5 uppercase tracking-[0.25em] transition-colors duration-300 hover:bg-black hover:text-white"
+            >
+              Login
+            </Link>
+          </div>
+        )} */}
+        {isLandingPage ? (
+          <div className="flex items-center gap-8 text-sm uppercase tracking-[0.2em]">
+            <Link href="/landingpage/user">User</Link>
+
+            <p className="text-neutral-500 normal-case tracking-normal">
+              Hello Superuser!
+            </p>
+
+            <button
+              className="cursor-pointer"
+              onClick={() => setLanguage(language === "de" ? "en" : "de")}
+            >
+              {language.toUpperCase()}
+            </button>
+
+            <Link
+              href="/login"
+              className="border border-black px-8 py-2.5 transition-colors duration-300 hover:bg-black hover:text-white"
+            >
+              Logout
+            </Link>
+          </div>
+        ) : (
+          <div className="flex items-center uppercase gap-4">
+            <button
+              className="text-sm uppercase tracking-[0.2em] cursor-pointer"
+              onClick={() => setLanguage(language === "de" ? "en" : "de")}
+            >
+              {language.toUpperCase()}
+            </button>
+
+            <Link
+              href="/login"
+              className="border border-black px-8 py-2.5 uppercase tracking-[0.25em] transition-colors duration-300 hover:bg-black hover:text-white"
             >
               Login
             </Link>
