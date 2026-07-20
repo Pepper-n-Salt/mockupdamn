@@ -1,5 +1,5 @@
 export default function Home() {
-  const workflow = ["Institution", "Artwork", "Exhibition", "Screen"];
+  const workflow = ["Contact", "Artwork", "Exhibition", "Screen"];
 
   return (
     <section className="space-y-20">
@@ -7,7 +7,7 @@ export default function Home() {
         A system for collecting, curating and presenting digital art.
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 tracking-widest leading-loose">
         <p>
           D.A.M.N. (Digital Artwork Management Network) is a platform designed
           to simplify the organization and presentation of digital artworks. It

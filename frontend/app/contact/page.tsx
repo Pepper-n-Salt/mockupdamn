@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <section className="space-y-8">
-      <h1 className=" text-5xl md:text-7xl sm:text-5xl lg:text-9xl font-light tracking-tight">
+      <h1 className=" text-5xl md:text-7xl sm:text-5xl lg:text-9xl font-light">
         Contact
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 tracking-widest leading-loose">

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Login() {
   return (
     <section className="max-w-md">
-      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light leading-tight">
+      <h1 className="text-5xl md:text-7xl sm:text-6xl lg:text-9xl font-light leading-tight">
         Login
       </h1>
 
