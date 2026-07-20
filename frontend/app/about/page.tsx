@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <section className="space-y-20">
-      <section className="space-y-12">
+      <section className="space-y-20">
         <h1 className="text-5xl md:text-7xl lg:text-9xl font-light">
           Pepper&apos;n&apos;Salt
         </h1>
@@ -37,14 +37,14 @@ export default function About() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-light">Melanie Heß</h2>
+              <h2 className="text-3xl font-light leading-tight">Melanie Heß</h2>
 
               <p className="mt-2 uppercase tracking-[0.2em] text-sm text-neutral-500">
                 UX Design · Frontend Development
               </p>
             </div>
 
-            <p className="leading-loose">
+            <p className="tracking-widest leading-loose">
               Passionate about creating intuitive and engaging digital
               experiences through thoughtful UX design and modern frontend
               development. Focused on translating complex ideas into clear,
@@ -60,14 +60,14 @@ export default function About() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-light">Imke Högden</h2>
+              <h2 className="text-3xl font-light leading-tight">Imke Högden</h2>
 
               <p className="mt-2 uppercase tracking-[0.2em] text-sm text-neutral-500">
                 Frontend Development · Backend Development
               </p>
             </div>
 
-            <p className="leading-loose">
+            <p className="tracking-widest leading-loose">
               Focused on frontend and backend development, creating the
               technical foundation of D.A.M.N. Responsible for implementing the
               user interface, designing the application architecture,
@@ -135,7 +135,7 @@ export default function About() {
           </div>
 
           <div className="md:col-span-8">
-            <p className="leading-loose">
+            <p className=" tracking-widest leading-loose">
               We believe that successful digital products emerge through close
               collaboration. By combining different perspectives and skill sets,
               we transform ideas into thoughtful digital experiences that are

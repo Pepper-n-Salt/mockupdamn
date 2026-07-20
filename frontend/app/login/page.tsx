@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Login() {
   return (
     <section className="max-w-md">
-      <h1 className="text-5xl md:text-7xl sm:text-6xl lg:text-9xl font-light leading-tight">
+      <h1 className="text-5xl md:text-7xl sm:text-6xl lg:text-9xl font-light">
         Login
       </h1>
 
@@ -45,12 +45,13 @@ export default function Login() {
             />
           </div>
 
-          <button
+          <Link
+            href="/landingpage"
             type="submit"
             className="mt-6 self-start border border-black px-8 py-3 uppercase tracking-[0.25em] text-sm transition-colors duration-300 hover:bg-black hover:text-white"
           >
             Login
-          </button>
+          </Link>
         </div>
       </form>
     </section>
