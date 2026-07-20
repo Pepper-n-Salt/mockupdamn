@@ -1,30 +1,186 @@
 export default function Home() {
+  const workflow = ["Institution", "Artwork", "Exhibition", "Screen"];
+
   return (
-    <section className="space-y-12">
+    <section className="space-y-20">
       <h1 className="text-5xl md:text-7xl sm:text-5xl lg:text-9xl font-light">
-        Home
+        A system for collecting, curating and presenting digital art.
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
+          D.A.M.N. (Digital Artwork Management Network) is a platform designed
+          to simplify the organization and presentation of digital artworks. It
+          brings together artwork data, collections, exhibitions, and display
+          management in one centralized environment, creating a structured
+          workflow from archive to presentation.
         </p>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+          Whether used by artists, galleries, museums, or cultural institutions,
+          D.A.M.N. supports the entire curatorial process. Artworks can be
+          documented, enriched with metadata, grouped into collections, and
+          prepared for exhibitions without relying on scattered files or
+          disconnected systems.
         </p>
 
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-          odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-          quis sem at nibh elementum imperdiet.
+          By connecting collections with exhibitions and digital screens,
+          D.A.M.N. creates a seamless link between management and presentation.
+          The platform is built to make digital art easier to curate, maintain,
+          and share, while providing a flexible foundation that can grow with
+          future projects and collaborations.
         </p>
       </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        {/* Screenshot Dashboard */}
+        <div className="lg:col-span-8">
+          <div className="aspect-[16/9] border border-neutral-300 bg-neutral-100 overflow-hidden">
+            {/* hier dann Screenshot als <Image> einsetzen */}
+            <div className="flex h-full items-center justify-center uppercase tracking-[0.3em] text-neutral-400 text-sm">
+              Screenshot Dashboard 16:9
+            </div>
+          </div>
+        </div>
+
+        {/* Workflow */}
+        <aside className="lg:col-span-4">
+          <p className="mb-8 text-sm uppercase tracking-[0.25em] text-neutral-500">
+            Workflow
+          </p>
+
+          <div className="space-y-6">
+            {workflow.map((item, index) => (
+              <div key={item}>
+                <div className="flex items-center gap-5">
+                  <span className="w-8 text-sm text-neutral-400">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <h3 className="text-2xl font-light">{item}</h3>
+                </div>
+
+                {index < workflow.length - 1 && (
+                  <div className="ml-4 mt-3 h-8 border-l border-neutral-300" />
+                )}
+              </div>
+            ))}
+          </div>
+        </aside>
+      </div>
+
+      {/* Systemübersicht */}
+      {/* <section className="border-t border-neutral-200 pt-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <p className="text-sm uppercase tracking-[0.25em] text-neutral-500 mb-6">
+              Platform
+            </p>
+
+            <ul className="space-y-3">
+              <li>Artwork Management</li>
+              <li>Metadata Organization</li>
+              <li>Collection Structure</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-sm uppercase tracking-[0.25em] text-neutral-500 mb-6">
+              Exhibition
+            </p>
+
+            <ul className="space-y-3">
+              <li>Digital Curation</li>
+              <li>Exhibition Planning</li>
+              <li>Screen Distribution</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-sm uppercase tracking-[0.25em] text-neutral-500 mb-6">
+              Network
+            </p>
+
+            <ul className="space-y-3">
+              <li>Artists</li>
+              <li>Institutions</li>
+              <li>Connected Displays</li>
+            </ul>
+          </div>
+        </div>
+      </section> */}
+
+      {/* System Overview */}
+      <section className="border-t border-neutral-200 pt-12 space-y-12">
+        <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
+          System Overview
+        </p>
+
+        <div className="divide-y divide-neutral-200">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 py-8">
+            <div className="md:col-span-2 text-sm text-neutral-400">01</div>
+
+            <div className="md:col-span-4">
+              <h3 className="text-2xl font-light">Archive</h3>
+            </div>
+
+            <div className="md:col-span-6">
+              <p>
+                Store, organize and maintain digital artworks with structured
+                information, metadata and documentation.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 py-8">
+            <div className="md:col-span-2 text-sm text-neutral-400">02</div>
+
+            <div className="md:col-span-4">
+              <h3 className="text-2xl font-light">Curate</h3>
+            </div>
+
+            <div className="md:col-span-6">
+              <p>
+                Build collections, plan exhibitions and create meaningful
+                relationships between artworks and contexts.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 py-8">
+            <div className="md:col-span-2 text-sm text-neutral-400">03</div>
+
+            <div className="md:col-span-4">
+              <h3 className="text-2xl font-light">Publish</h3>
+            </div>
+
+            <div className="md:col-span-6">
+              <p>
+                Connect curated content to digital screens and make artworks
+                accessible across different exhibition environments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* letzter Abschluss - muss noch korrekt formatiert werden */}
+      {/* <section className="border-t border-neutral-200 pt-16 pb-8">
+        <div className="max-w-3xl">
+          <p className="text-4xl md:text-6xl font-light leading-tight">
+            D.A.M.N.
+          </p>
+
+          <p className="mt-4 text-lg leading-relaxed">
+            Digital Artwork Management Network
+          </p>
+
+          <p className="mt-8 text-neutral-600 leading-relaxed">
+            A system for collecting, curating and presenting digital art.
+          </p>
+        </div>
+      </section> */}
     </section>
   );
 }

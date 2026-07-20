@@ -2,29 +2,35 @@ import Link from "next/link";
 
 export default function Login() {
   return (
-    <section className="space-y-8 m-auto max-w-sm">
-      <h1 className="text-5xl md:text-7xl sm:text-5xl lg:text-9xl font-light">
+    <section className="max-w-md">
+      <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light leading-tight">
         Login
       </h1>
-      <form action="/login" method="post">
-        <div className="flex flex-col gap-4 w-sm  ">
+
+      <p className="mt-4 text-sm text-neutral-500">
+        Access the Digital Artwork Management Network!
+      </p>
+
+      <form action="/login" method="post" className="mt-12">
+        <div className="flex flex-col gap-6">
           <input
             type="text"
             placeholder="Username"
-            className="border px-3 py-2 outline-none rounded-2xl "
+            className="border-b border-black py-3 outline-none bg-transparent placeholder:text-neutral-400"
           />
+
           <input
             type="password"
             placeholder="Code"
-            className="border px-3 py-2 outline-none rounded-2xl "
+            className="border-b border-black py-3 outline-none bg-transparent placeholder:text-neutral-400"
           />
-          <Link href="/landingpage" className="text-sm text-gray-500 m-auto">
-            <button
-              type="submit"
-              className="bg-black text-white px-3 py-2 rounded-2xl hover:bg-white hover:text-black border border-black transition-colors duration-300 w-fit "
-            >
-              Login
-            </button>
+
+          {/* später unbedingt als button mit submit bauen */}
+          <Link
+            href="/landingpage"
+            className="mt-6 inline-flex w-fit border border-black px-8 py-3 uppercase tracking-[0.25em] text-sm transition-colors duration-300 hover:bg-black hover:text-white"
+          >
+            Login
           </Link>
         </div>
       </form>
