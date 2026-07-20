@@ -35,12 +35,48 @@ export default function Home() {
 
       <section className="border-t border-neutral-200 pt-12 space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-8">
-            <div className="aspect-[16/9] border border-neutral-300 bg-neutral-100 overflow-hidden">
-              {/* hier dann Screenshot als <Image> einsetzen */}
-              <div className="flex h-full items-center justify-center uppercase tracking-[0.3em] text-neutral-400 text-sm">
+          {/* <div className="lg:col-span-8">
+            <div className="aspect-[16/9] border border-neutral-300 bg-neutral-100 overflow-hidden"> */}
+          {/* hier dann Screenshot als <Image> einsetzen */}
+          {/* <div className="flex h-full items-center justify-center uppercase tracking-[0.3em] text-neutral-400 text-sm">
                 Screenshot Dashboard 16:9
               </div>
+            </div>
+          </div> */}
+          <div className="lg:col-span-8">
+            <div className="aspect-[16/9] border border-neutral-300 bg-neutral-100 overflow-hidden">
+              {/* hier später Image-Komponente einsetzen */}
+              <div className="flex h-full items-center justify-center uppercase tracking-[0.3em] text-neutral-400 text-sm">
+                Screenshot Dashboard
+              </div>
+            </div>
+
+            <div className="flex justify-between items-center mt-6">
+              <div className="flex gap-6 px-6">
+                <button
+                  aria-label="Previous screenshot"
+                  className="group flex items-center gap-2 text-sm uppercase tracking-[0.2em]"
+                >
+                  <span className="transition-transform duration-300 group-hover:-translate-x-1">
+                    ←
+                  </span>
+                  Prev
+                </button>
+
+                <button
+                  aria-label="Next screenshot"
+                  className="group flex items-center gap-2 text-sm uppercase tracking-[0.2em]"
+                >
+                  Next
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </button>
+              </div>
+
+              <p className="text-sm uppercase tracking-[0.2em] text-neutral-400 px-6">
+                01 / 04
+              </p>
             </div>
           </div>
 

@@ -4,11 +4,11 @@ export default function LandingPage() {
       <h1 className="text-5xl md:text-7xl sm:text-5xl lg:text-9xl font-light">
         Digital Display Platform
       </h1>
-      <p className="tracking-widest leading-loose">
+      <p className="max-w-2xl tracking-widest leading-loose">
         Create, manage and present digital artworks across connected screens.
       </p>
       {/* Karussell */}
-      <section>
+      <section className="border-t border-neutral-200 pt-12 space-y-12">
         <div className="mb-8">
           <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
             Current Collection
