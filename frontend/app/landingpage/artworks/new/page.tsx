@@ -1,4 +1,15 @@
-export default function LandingPageNewArtworkPage() {
+"use client";
+
+import { useState } from "react";
+
+export default function NewArtworkPage() {
+  const [language, setLanguage] = useState("german");
+  const [artworkSaved, setArtworkSaved] = useState(false);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setArtworkSaved(true);
+  };
+
   return (
     <section className="space-y-10 py-20">
       <div className="space-y-4">
@@ -10,9 +21,35 @@ export default function LandingPageNewArtworkPage() {
           Fill in the details below to create a new artwork entry for the
           platform.
         </p>
+
+        <br />
+        <br />
       </div>
 
-      <form className="mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-none border border-black p-8">
+      <form
+        className="mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-none border border-black p-8"
+        onSubmit={handleSubmit}
+      >
+        {/* Preferred Language */}
+        <div className="flex flex-col gap-2">
+          <label
+            htmlFor="language"
+            className="text-sm uppercase tracking-[0.2em]"
+          >
+            Form language
+          </label>
+
+          <select
+            id="language"
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+            className="border-b border-black bg-transparent py-3 outline-none"
+          >
+            <option value="german">German</option>
+            <option value="english">English</option>
+          </select>
+        </div>
+
         <div className="grid gap-8 md:grid-cols-2">
           <div className="flex flex-col gap-2">
             <label
@@ -21,6 +58,7 @@ export default function LandingPageNewArtworkPage() {
             >
               Title
             </label>
+
             <input
               type="text"
               id="title"
@@ -36,6 +74,7 @@ export default function LandingPageNewArtworkPage() {
             >
               Subtitle
             </label>
+
             <input
               type="text"
               id="subtitle"
@@ -51,6 +90,7 @@ export default function LandingPageNewArtworkPage() {
             >
               Artist
             </label>
+
             <input
               type="text"
               id="artist"
@@ -66,6 +106,7 @@ export default function LandingPageNewArtworkPage() {
             >
               Biography (optional)
             </label>
+
             <input
               type="text"
               id="biography"
@@ -81,6 +122,7 @@ export default function LandingPageNewArtworkPage() {
             >
               Year of creation
             </label>
+
             <input
               type="number"
               id="year"
@@ -91,30 +133,32 @@ export default function LandingPageNewArtworkPage() {
 
           <div className="flex flex-col gap-2">
             <label
-              htmlFor="origin"
+              htmlFor="land"
               className="text-sm uppercase tracking-[0.2em]"
             >
-              Origin
+              Land
             </label>
+
             <input
               type="text"
-              id="origin"
-              name="origin"
+              id="land"
+              name="land"
               className="border-b border-black bg-transparent py-3 outline-none focus:border-2 focus:border-t-0 focus:border-l-0 focus:border-r-0"
             />
           </div>
 
           <div className="flex flex-col gap-2">
             <label
-              htmlFor="originDescription"
+              htmlFor="origin"
               className="text-sm uppercase tracking-[0.2em]"
             >
-              Origin description (optional)
+              origin
             </label>
+
             <input
               type="text"
-              id="originDescription"
-              name="originDescription"
+              id="origin"
+              name="origin"
               className="border-b border-black bg-transparent py-3 outline-none focus:border-2 focus:border-t-0 focus:border-l-0 focus:border-r-0"
             />
           </div>
@@ -126,6 +170,7 @@ export default function LandingPageNewArtworkPage() {
             >
               Material
             </label>
+
             <input
               type="text"
               id="material"
@@ -141,6 +186,7 @@ export default function LandingPageNewArtworkPage() {
             >
               Dimensions
             </label>
+
             <input
               type="text"
               id="dimensions"
@@ -157,6 +203,7 @@ export default function LandingPageNewArtworkPage() {
           >
             Description
           </label>
+
           <textarea
             id="description"
             name="description"
@@ -169,6 +216,7 @@ export default function LandingPageNewArtworkPage() {
           <label htmlFor="image" className="text-sm uppercase tracking-[0.2em]">
             Upload image
           </label>
+
           <input
             type="file"
             id="image"
@@ -178,12 +226,29 @@ export default function LandingPageNewArtworkPage() {
           />
         </div>
 
-        <button
-          type="submit"
-          className="self-start border border-black px-8 py-3 uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-black hover:text-white"
-        >
-          Save Artwork
-        </button>
+        {/* Buttons */}
+        <div className="flex flex-wrap gap-4">
+          <button
+            type="submit"
+            className="border border-black px-8 py-3 uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-black hover:text-white"
+          >
+            Save Artwork
+          </button>
+
+          <button
+            type="button"
+            disabled={!artworkSaved}
+            className={`border px-8 py-3 uppercase tracking-[0.2em] transition-colors duration-300 ${
+              artworkSaved
+                ? "border-black hover:bg-black hover:text-white"
+                : "cursor-not-allowed border-gray-300 text-gray-400"
+            }`}
+          >
+            {language === "german"
+              ? "Translate into English"
+              : "Translate into German"}
+          </button>
+        </div>
       </form>
     </section>
   );
