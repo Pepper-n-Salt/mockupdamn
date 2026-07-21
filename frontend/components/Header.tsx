@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="border-b border-gray-200 px-8 py-6">
-      <div className="mb-14">
+      <div className="mb-20">
         {isLandingPage ? (
           // landingpage für eingeloggte user:innen
           <Link href="/landingpage" aria-label="Go to landingpage">
