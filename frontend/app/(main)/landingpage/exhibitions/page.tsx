@@ -1,6 +1,6 @@
-import ArchivedExhibitions from "../../../components/ArchivedExhibitions";
-import DeletedExhibitions from "../../../components/DeletedExhibitions";
-import ExhibitionCarousel from "../../../components/ExhibitionCarousel";
+import ArchivedExhibitions from "../../../../components/ArchivedExhibitions";
+import DeletedExhibitions from "../../../../components/DeletedExhibitions";
+import ExhibitionCarousel from "../../../../components/ExhibitionCarousel";
 import Link from "next/link";
 
 export default function LandingPageExhibitions() {
