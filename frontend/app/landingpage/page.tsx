@@ -4,11 +4,11 @@ export default function LandingPage() {
       <h1 className="text-5xl md:text-7xl sm:text-5xl lg:text-9xl font-light">
         Digital Display Platform
       </h1>
-      <p>
+      <p className="max-w-2xl tracking-widest leading-loose">
         Create, manage and present digital artworks across connected screens.
       </p>
       {/* Karussell */}
-      <section>
+      <section className="border-t border-neutral-200 pt-12 space-y-12">
         <div className="mb-8">
           <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
             Current Collection
@@ -104,7 +104,9 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 py-6">
             <p className="md:col-span-2 text-sm text-neutral-400">12.02.2026</p>
 
-            <p className="md:col-span-4">New artwork added</p>
+            <p className="md:col-span-4 tracking-widest leading-loose">
+              New artwork added
+            </p>
 
             <p className="md:col-span-6 text-neutral-500">Untitled No. 24</p>
           </div>
@@ -112,7 +114,9 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-12 py-6">
             <p className="md:col-span-2 text-sm text-neutral-400">08.02.2026</p>
 
-            <p className="md:col-span-4">Exhibition updated</p>
+            <p className="md:col-span-4 tracking-widest leading-loose">
+              Exhibition updated
+            </p>
 
             <p className="md:col-span-6 text-neutral-500">Digital Landscapes</p>
           </div>
@@ -129,7 +133,7 @@ export default function LandingPage() {
           <div className="md:col-span-2">
             <h2 className="text-4xl font-light">Digital Landscapes</h2>
 
-            <p className="mt-4 max-w-xl text-neutral-500">
+            <p className="mt-4 max-w-xl tracking-widest leading-loose">
               A synchronized presentation of digital artworks across connected
               information screens.
             </p>
@@ -138,7 +142,7 @@ export default function LandingPage() {
           <div className="text-sm space-y-4">
             <div className="flex justify-between border-b border-neutral-200 pb-3">
               <span className="text-neutral-500">Screens</span>
-              <span>04</span>
+              <span>4</span>
             </div>
 
             <div className="flex justify-between border-b border-neutral-200 pb-3">

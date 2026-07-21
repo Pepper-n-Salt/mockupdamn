@@ -1,18 +1,18 @@
 export default function LandingPageNewExhibitionPage() {
   return (
     <section className="space-y-10 py-20">
-      <div className="space-y-4">
+      <div className="space-y-20">
         <h1 className="text-5xl font-light sm:text-5xl md:text-7xl lg:text-9xl">
           Add new Exhibition
         </h1>
 
-        <p className="max-w-2xl text-gray-600">
+        <p className="max-w-2xl tracking-widest leading-loose">
           Fill in the details below to create a new exhibition entry.
         </p>
       </div>
 
       <form className="mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-none border border-black p-8">
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-2">
           <div className="flex flex-col gap-2">
             <label
               htmlFor="title"

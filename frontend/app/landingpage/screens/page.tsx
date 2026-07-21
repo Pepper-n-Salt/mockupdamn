@@ -9,12 +9,15 @@ export default function LandingPageScreens() {
           Display Management
         </h1>
 
-        <p className="max-w-2xl text-gray-600">
+        <p className="max-w-2xl tracking-widest leading-loose">
           Manage and curate digital content displayed throughout the museum.
         </p>
       </div>
 
-      <section id="current-screens" className="space-y-8">
+      <section
+        id="current-screens"
+        className="border-t border-neutral-200 pt-12 space-y-12"
+      >
         <h2 className="text-3xl font-light sm:text-3xl md:text-5xl lg:text-7xl">
           Exhibition Screens
         </h2>
@@ -30,12 +33,14 @@ export default function LandingPageScreens() {
       </Link> */}
 
       {/* mehr als Action behandeln, eher nicht so editioral-style? */}
-      <Link
-        href="/landingpage/screens/new"
-        className="inline-flex border border-black px-8 py-3 text-sm uppercase tracking-[0.25em] transition-colors duration-300 hover:bg-black hover:text-white"
-      >
-        Add new screen →
-      </Link>
+      <section className="border-t border-neutral-200 pt-12 space-y-12">
+        <Link
+          href="/landingpage/screens/new"
+          className="inline-flex border border-black px-8 py-3 text-sm uppercase tracking-[0.25em] transition-colors duration-300 hover:bg-black hover:text-white"
+        >
+          Add new screen →
+        </Link>
+      </section>
     </section>
   );
 }
