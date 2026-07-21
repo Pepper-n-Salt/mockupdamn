@@ -1,9 +1,20 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 
 export default function NewScreenPage() {
+  const [selectedType, setSelectedType] = useState<
+    "exhibition" | "artwork" | "artist" | null
+  >(null);
+
+  function createScreen() {
+    if (!selectedType) return;
+
+    window.open(`/display/${selectedType}`, "_blank"); // Die window.open()-Methode in JavaScript öffnet ein neues Browserfenster, um die darin angegebene URL zu laden.
+  }
+
   return (
     <section className="space-y-20">
-      {/* Einleitung */}
       <div className="space-y-6">
         <h1 className="text-5xl font-light sm:text-6xl md:text-7xl">
           Create Screen
@@ -14,35 +25,25 @@ export default function NewScreenPage() {
         </p>
       </div>
 
-      <button
-        className="
-    border border-black
-    px-8
-    py-2.5
-    uppercase
-    tracking-[0.25em]
-    transition-colors
-    duration-300
-    hover:bg-black hover:text-white
-  "
-      >
-        Test
-      </button>
-
-      {/* Screen Typen */}
       <section className="space-y-8">
         <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
           Select Screen Type
         </p>
 
-        {/* Static Screens */}
         <div className="space-y-6">
           <h2 className="text-2xl font-light">Static Screens</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <button
-              className="group border border-neutral-300 p-6 text-left transition-colors duration-300  hover:bg-black hover:text-white
-  "
+              onClick={() => setSelectedType("exhibition")}
+              className={`
+                border p-6 text-left transition
+                ${
+                  selectedType === "exhibition"
+                    ? "bg-black text-white border-black"
+                    : "border-neutral-300 hover:bg-black hover:text-white"
+                }
+              `}
             >
               <h3 className="text-xl font-light">Exhibition</h3>
 
@@ -51,7 +52,17 @@ export default function NewScreenPage() {
               </p>
             </button>
 
-            <button className="border border-neutral-300 p-6 text-left transition hover:bg-black hover:text-white">
+            <button
+              onClick={() => setSelectedType("artwork")}
+              className={`
+                border p-6 text-left transition
+                ${
+                  selectedType === "artwork"
+                    ? "bg-black text-white border-black"
+                    : "border-neutral-300 hover:bg-black hover:text-white"
+                }
+              `}
+            >
               <h3 className="text-xl font-light">Artwork</h3>
 
               <p className="mt-3 text-sm text-neutral-500">
@@ -59,7 +70,17 @@ export default function NewScreenPage() {
               </p>
             </button>
 
-            <button className="border border-neutral-300 p-6 text-left transition hover:bg-black hover:text-white">
+            <button
+              onClick={() => setSelectedType("artist")}
+              className={`
+                border p-6 text-left transition
+                ${
+                  selectedType === "artist"
+                    ? "bg-black text-white border-black"
+                    : "border-neutral-300 hover:bg-black hover:text-white"
+                }
+              `}
+            >
               <h3 className="text-xl font-light">Artist</h3>
 
               <p className="mt-3 text-sm text-neutral-500">
@@ -69,7 +90,6 @@ export default function NewScreenPage() {
           </div>
         </div>
 
-        {/* Dynamic Screens */}
         <div className="space-y-6 pt-8">
           <h2 className="text-2xl font-light">Dynamic Screens</h2>
 
@@ -107,7 +127,6 @@ export default function NewScreenPage() {
         </div>
       </section>
 
-      {/* Divider */}
       <section className="border-t border-neutral-200 pt-12">
         <p className="text-sm uppercase tracking-[0.25em] text-neutral-500 mb-8">
           Screen Information
@@ -134,12 +153,26 @@ export default function NewScreenPage() {
             />
           </div>
 
-          <Link
-            href="/display/exhibition"
-            className="border border-black px-8 py-3 text-sm uppercase tracking-[0.25em] transition hover:bg-black hover:text-white"
+          <button
+            onClick={createScreen}
+            disabled={!selectedType}
+            className="
+              border
+              border-black
+              px-8
+              py-3
+              text-sm
+              uppercase
+              tracking-[0.25em]
+              transition
+              hover:bg-black
+              hover:text-white
+              disabled:cursor-not-allowed
+              disabled:opacity-30
+            "
           >
             Create Screen
-          </Link>
+          </button>
         </div>
       </section>
     </section>

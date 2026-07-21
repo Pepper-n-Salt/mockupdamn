@@ -1,4 +1,4 @@
-import ScreenCarousel from "../../../components/ScreenCarousel";
+import ScreenCarousel from "../../../../components/ScreenCarousel";
 import Link from "next/link";
 
 export default function LandingPageScreens() {

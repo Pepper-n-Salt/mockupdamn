@@ -22,17 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <body className={inter.className}>
-        <LanguageProvider>
-          <div className="min-h-screen flex flex-col bg-white text-black">
-            <Header />
-
-            <main className="flex-1 w-full px-8 py-24">{children}</main>
-
-            <Footer />
-          </div>
-        </LanguageProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

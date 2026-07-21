@@ -1,5 +1,5 @@
-import ArtworkCarousel from "../../../components/ArtworkCarousel";
-import DeletedArtworks from "../../../components/DeletedArtworks";
+import ArtworkCarousel from "../../../../components/ArtworkCarousel";
+import DeletedArtworks from "../../../../components/DeletedArtworks";
 import Link from "next/link";
 
 export default function LandingPageArtworks() {
