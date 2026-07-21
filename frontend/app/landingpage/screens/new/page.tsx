@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NewScreenPage() {
   return (
     <section className="space-y-20">
@@ -132,9 +134,12 @@ export default function NewScreenPage() {
             />
           </div>
 
-          <button className="border border-black px-8 py-3 text-sm uppercase tracking-[0.25em] transition hover:bg-black hover:text-white">
+          <Link
+            href="/display/exhibition"
+            className="border border-black px-8 py-3 text-sm uppercase tracking-[0.25em] transition hover:bg-black hover:text-white"
+          >
             Create Screen
-          </button>
+          </Link>
         </div>
       </section>
     </section>
