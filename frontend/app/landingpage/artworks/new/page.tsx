@@ -1,4 +1,35 @@
+"use client";
+
+import { useState } from "react";
+
 export default function LandingPageNewArtworkPage() {
+  const [showImport, setShowImport] = useState(false);
+  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [hasSearched, setHasSearched] = useState(false);
+
+  const [formData, setFormData] = useState({
+    title: "",
+    subtitle: "",
+    artist: "",
+    biography: "",
+    year: "",
+    origin: "",
+    originDescription: "",
+    material: "",
+    dimensions: "",
+    description: "",
+  });
+
+  const artworkResults = [
+    {
+      objectID: "123",
+      title: "The Starry Night",
+      artistName: "Vincent van Gogh",
+      year: "1889",
+      material: "Oil on canvas",
+    },
+  ];
+
   return (
     <section className="space-y-10 py-20">
       <div className="space-y-20">
@@ -11,6 +42,93 @@ export default function LandingPageNewArtworkPage() {
           platform.
         </p>
       </div>
+
+      <div className="flex items-center gap-6">
+        <button
+          type="button"
+          onClick={() => setShowImport(!showImport)}
+          className="border border-black px-8 py-3 uppercase tracking-[0.2em] transition-colors duration-300 hover:bg-black hover:text-white"
+        >
+          {showImport ? "Close Import" : "Import Artwork"}
+        </button>
+
+        <p className="text-sm text-neutral-500 tracking-wide">
+          Search and import artwork data from The Met Collection.
+        </p>
+      </div>
+
+      {showImport && (
+        <section className="border-t border-neutral-200 pt-12 space-y-8">
+          <div>
+            <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
+              Import Artwork
+            </p>
+
+            <h2 className="mt-4 text-3xl font-light">
+              Search The Met Collection
+            </h2>
+          </div>
+
+          <div className="max-w-xl flex gap-4">
+            <input
+              type="text"
+              placeholder="Search by the title of the artwork."
+              className="flex-1 border-b border-black bg-transparent py-3 outline-none"
+            />
+
+            <button
+              type="button"
+              onClick={() => {
+                setSearchResults(artworkResults);
+                setHasSearched(true);
+              }}
+              className="border border-black px-6 py-3 uppercase tracking-[0.2em] text-sm hover:bg-black hover:text-white transition-colors"
+            >
+              Search
+            </button>
+          </div>
+
+          <div className="border-t border-neutral-200 pt-8">
+            {/* Suchergebnisse hier reinpacken*/}
+          </div>
+        </section>
+      )}
+
+      {hasSearched && (
+        <section className="border-t border-neutral-200 pt-12 space-y-8">
+          <h2 className="text-3xl font-light">Search Results</h2>
+
+          <div className="divide-y divide-neutral-200">
+            {artworkResults.map((artwork) => (
+              <div key={artwork.objectID} className="py-8">
+                <h3 className="text-xl font-light">{artwork.title}</h3>
+
+                <p className="mt-2 text-sm text-neutral-500">
+                  {artwork.artistName} · {artwork.year}
+                </p>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setFormData({
+                      ...formData,
+                      title: artwork.title ?? "",
+                      artist: artwork.artistName ?? "",
+                      year: artwork.year ?? "",
+                      material: artwork.material ?? "",
+                    });
+
+                    setShowImport(false);
+                  }}
+                  className="mt-6 border border-black px-6 py-3 uppercase tracking-[0.2em] text-sm transition-colors duration-300 hover:bg-black hover:text-white"
+                >
+                  Import
+                </button>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <form className="mx-auto flex w-full max-w-3xl flex-col gap-8 rounded-none border border-black p-8">
         <div className="grid gap-12 md:grid-cols-2">
